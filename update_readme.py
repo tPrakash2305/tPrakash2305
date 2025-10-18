@@ -26,6 +26,12 @@ def update_readme():
     
     updated_content = re.sub(pattern, replacement, content)
     
+    # Validate that the substitution was successful
+    if updated_content == content:
+        print("⚠️  Warning: 'Last Updated:' pattern not found in README.md")
+        print("No changes were made to the file.")
+        return
+    
     # Write the updated content back
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(updated_content)
