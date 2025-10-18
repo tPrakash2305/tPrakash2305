@@ -9,18 +9,18 @@ I'm a passionate software developer with a keen interest in building innovative 
 - **Languages:** Python, JavaScript, Java, C++
 - **Frameworks:** React, Node.js, Django, Flask
 - **Tools:** Git, Docker, Kubernetes, CI/CD
-- **Cloud:** AWS, Azure, Google Cloud
+- **Cloud:** AWS
 
 ###  Featured Projects
 
-- **Project 1:** QuMail
-A secure, quantum-resistant email key management backend service built with Node.js and Express.
+- **Project 1:** QuMail :
+- A secure, quantum-resistant email key management backend service built with Node.js and Express.
 
-- **Project 2:** Telecom Customer Churn Prediction System
-A comprehensive machine learning project for predicting customer churn in telecom industry using advanced analytics, multiple ML models, and an interactive Streamlit dashboard.
+- **Project 2:** Telecom Customer Churn Prediction System :
+- A comprehensive machine learning project for predicting customer churn in telecom industry using advanced analytics, multiple ML models, and an interactive Streamlit dashboard.
 
 - **Project 3:** Snack Corner App
-A simple and user-friendly mobile/web application designed to digitize the ordering experience at a local snack corner
+- A simple and user-friendly mobile/web application designed to digitize the ordering experience at a local snack corner
 
 ###  GitHub Stats & Contributions
 
