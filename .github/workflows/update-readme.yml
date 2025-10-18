@@ -1,0 +1,39 @@
+name: Update Profile README
+
+on:
+  schedule:
+    # Run 4 times per week: Monday, Wednesday, Friday, Sunday
+    - cron: '0 0 * * 1'    # Monday at 00:00 UTC
+    - cron: '0 12 * * 3'   # Wednesday at 12:00 UTC
+    - cron: '0 0 * * 5'    # Friday at 00:00 UTC
+    - cron: '0 12 * * 0'   # Sunday at 12:00 UTC
+  workflow_dispatch:        # Allow manual triggering for testing
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Update README
+        run: python update_readme.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          timestamp=$(date +'%Y-%m-%d %H:%M:%S UTC')
+          git diff --quiet && git diff --staged --quiet || \
+            (git commit -m "🤖 Auto-update README - $timestamp" && git push)
